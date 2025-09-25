@@ -42,7 +42,7 @@ if url then
     end)
     if not ok then
         -- tampilkan error (atau kick sesuai kebutuhan)
-        warn("Gagal memuat script:", err)
+        warn("FAILED FAILED:", err)
         -- game.Players.LocalPlayer:Kick("Failed to load script: "..tostring(err))
     end
 else
