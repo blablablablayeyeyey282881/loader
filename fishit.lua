@@ -1,29 +1,50 @@
-local userId = game.Players.LocalPlayer.UserId
+-- Perbaikan script (paste-friendly)
+local player = game.Players.LocalPlayer
+local userId = player and player.UserId or 0
+
+-- blacklist harus angka jika dibandingkan dengan userId
 local blacklist = {
+    -- contoh: 12345678,
 }
 
 for _, id in pairs(blacklist) do
     if userId == id then
-        game.Players.LocalPlayer:Kick("You have been Blacklisted from using Nexa Hub.")
-        break
+        player:Kick("You have been Blacklisted from using Nexa Hub.")
+        return
     end
 end
 
+-- setclipboard kadang memerlukan executor yang support; pcall supaya aman
+pcall(function() setclipboard("https://discord.gg/EabKZjJGGF") end)
 
-setclipboard("https://discord.gg/EabKZjJGGF")
-
+-- simpan HANYA URL di table ini
 local scripts = {
-    -- fish it
-    [121864768012064] = "loadstring(game:HttpGet("https://pandadevelopment.net/virtual/file/f196a0a2c3db9e4c"))()",
+    -- fish it (contoh PlaceId, ganti dengan PlaceId yang benar)
+    [121864768012064] = "https://pandadevelopment.net/virtual/file/f196a0a2c3db9e4c",
   
     -- My Singing Brainrot
-    [127742093697776] = "loadstring(game:HttpGet("https://pandadevelopment.net/virtual/file/21bb87d616bf1fec"))()",
-
+    [127742093697776] = "https://pandadevelopment.net/virtual/file/21bb87d616bf1fec",
 }
 
-local url = scripts[game.PlaceId]
+local placeId = game.PlaceId
+local url = scripts[placeId]
+
 if url then
-    loadstring(game:HttpGet(url))()
+    -- aman: pcall untuk tangkap error HttpGet / loadstring
+    local ok, err = pcall(function()
+        local response = game:HttpGet(url) -- ambil kode dari URL
+        local func = loadstring(response)
+        if type(func) == "function" then
+            func()
+        else
+            error("loadstring returned non-function")
+        end
+    end)
+    if not ok then
+        -- tampilkan error (atau kick sesuai kebutuhan)
+        warn("Gagal memuat script:", err)
+        -- game.Players.LocalPlayer:Kick("Failed to load script: "..tostring(err))
+    end
 else
-    game.Players.LocalPlayer:Kick("NEXA HUB does not support this game.")
+    player:Kick("NEXA HUB does not support this game.")
 end
