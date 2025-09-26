@@ -23,7 +23,7 @@ local scripts = {
     [121864768012064] = "https://pandadevelopment.net/virtual/file/f196a0a2c3db9e4c",
   
     -- PvB
-    [127742093697776] = "https://pandadevelopment.net/virtual/file/6907a097430e9fee",
+    [127742093697776] = "https://pandadevelopment.net/virtual/file/5e67cc02173e3850"",
 }
 
 local placeId = game.PlaceId
