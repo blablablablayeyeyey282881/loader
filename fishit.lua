@@ -1,50 +1,61 @@
--- Perbaikan script (paste-friendly)
-local player = game.Players.LocalPlayer
-local userId = player and player.UserId or 0
+local placeId = game.PlaceId
+local StarterGui = game:GetService("StarterGui")
+local gameName, success = nil, false
 
--- blacklist harus angka jika dibandingkan dengan userId
-local blacklist = {
-    -- contoh: 12345678,
-}
-
-for _, id in pairs(blacklist) do
-    if userId == id then
-        player:Kick("You have been Blacklisted from using Nexa Hub.")
-        return
-    end
+if placeId == 121864768012064 then
+    gameName = "Fish It"
+    loadstring(game:HttpGet("https://pandadevelopment.net/virtual/file/f196a0a2c3db9e4c"))()
+    success = true
+elseif placeId == 127742093697776 then
+    gameName = "Plant Vs Brainrots"
+    loadstring(game:HttpGet("https://pandadevelopment.net/virtual/file/5e67cc02173e3850"))()
+    success = true
+elseif placeId == 18687417158 then
+    gameName = "Forsaken"
+    loadstring(game:HttpGet("https://pandadevelopment.net/virtual/file/f196a0a2c3db9e4c"))()
+    success = true
+elseif placeId == 121864768012064 then
+    gameName = "Fish It"
+    loadstring(game:HttpGet("https://pandadevelopment.net/virtual/file/f196a0a2c3db9e4c"))()
+    success = true
+elseif placeId == 123921593837160 then
+    gameName = "Climb and Jump tower"
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/create-stree/STREE-HUB/refs/heads/main/Climb%20and%20Jump%20Tower/Main.lua"))()
+    success = true
+elseif placeId == 109983668079237 then
+    gameName = "Steal A Brainrot"
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/username/game-6/main.lua"))()
+    success = true
+elseif placeId == 3456789012 then
+    gameName = "Game 7"
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/username/game-7/main.lua"))()
+    success = true
+elseif placeId == 4567890123 then
+    gameName = "Game 8"
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/username/game-8/main.lua"))()
+    success = true
+elseif placeId == 5678901234 then
+    gameName = "Game 9"
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/username/game-9/main.lua"))()
+    success = true
+elseif placeId == 6789012345 then
+    gameName = "Game 10"
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/username/game-10/main.lua"))()
+    success = true
 end
 
--- setclipboard kadang memerlukan executor yang support; pcall supaya aman
-pcall(function() setclipboard("https://discord.gg/EabKZjJGGF") end)
-
--- simpan HANYA URL di table ini
-local scripts = {
-    -- fish it (contoh PlaceId, ganti dengan PlaceId yang benar)
-    [121864768012064] = "https://pandadevelopment.net/virtual/file/f196a0a2c3db9e4c",
-  
-    -- PvB
-    [127742093697776] = "https://pandadevelopment.net/virtual/file/5e67cc02173e3850"",
-}
-
-local placeId = game.PlaceId
-local url = scripts[placeId]
-
-if url then
-    -- aman: pcall untuk tangkap error HttpGet / loadstring
-    local ok, err = pcall(function()
-        local response = game:HttpGet(url) -- ambil kode dari URL
-        local func = loadstring(response)
-        if type(func) == "function" then
-            func()
-        else
-            error("loadstring returned non-function")
-        end
-    end)
-    if not ok then
-        -- tampilkan error (atau kick sesuai kebutuhan)
-        warn("FAILED FAILED:", err)
-        -- game.Players.LocalPlayer:Kick("Failed to load script: "..tostring(err))
-    end
+if success and gameName then
+    StarterGui:SetCore("SendNotification", {
+        Title = "NEXA HUB Loaded!",
+        Text = gameName .. " script loader!",
+        Duration = 6,
+        Icon = "rbxassetid://6023426926"
+    })
 else
-    player:Kick("NEXA HUB does not support this game.")
+    StarterGui:SetCore("SendNotification", {
+        Title = "NEXA HUB",
+        Text = (gameName or "Game") .. " Not Found!",
+        Duration = 6,
+        Icon = "rbxassetid://6023426923"
+    })
 end
