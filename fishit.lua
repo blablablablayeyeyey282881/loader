@@ -3,7 +3,7 @@ local player = game.Players.LocalPlayer
 local userId = player and player.UserId or 0
 
 -- blacklist harus angka jika dibandingkan dengan userId
-local blacklist = {
+local blacklist = "atabbi_store",
     -- contoh: 12345678,
 }
 
