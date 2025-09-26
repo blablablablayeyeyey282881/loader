@@ -22,8 +22,8 @@ local scripts = {
     -- fish it (contoh PlaceId, ganti dengan PlaceId yang benar)
     [121864768012064] = "https://pandadevelopment.net/virtual/file/f196a0a2c3db9e4c",
   
-    -- My Singing Brainrot
-    [127742093697776] = "https://pandadevelopment.net/virtual/file/21bb87d616bf1fec",
+    -- PvB
+    [127742093697776] = "https://pandadevelopment.net/virtual/file/6907a097430e9fee",
 }
 
 local placeId = game.PlaceId
