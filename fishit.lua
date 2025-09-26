@@ -2,18 +2,6 @@
 local player = game.Players.LocalPlayer
 local userId = player and player.UserId or 0
 
--- blacklist harus angka jika dibandingkan dengan userId
-local blacklist = "atabbi_store",
-    -- contoh: 12345678,
-}
-
-for _, id in pairs(blacklist) do
-    if userId == id then
-        player:Kick("You have been Blacklisted from using Nexa Hub.")
-        return
-    end
-end
-
 -- setclipboard kadang memerlukan executor yang support; pcall supaya aman
 pcall(function() setclipboard("https://discord.gg/EabKZjJGGF") end)
 
