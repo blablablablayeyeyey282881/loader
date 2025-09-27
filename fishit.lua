@@ -19,7 +19,7 @@ elseif placeId == 121864768012064 then
     loadstring(game:HttpGet("https://pandadevelopment.net/virtual/file/f196a0a2c3db9e4c"))()
     success = true
 elseif placeId == 16732694052 then
-    gameName = "Fisch"
+    gameName = "Fisch 🐟"
     loadstring(game:HttpGet("https://pandadevelopment.net/virtual/file/18468d6a99cee147"))()
     success = true
 elseif placeId == 109983668079237 then
