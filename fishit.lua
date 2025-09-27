@@ -18,9 +18,9 @@ elseif placeId == 121864768012064 then
     gameName = "Fish It"
     loadstring(game:HttpGet("https://pandadevelopment.net/virtual/file/f196a0a2c3db9e4c"))()
     success = true
-elseif placeId == 123921593837160 then
-    gameName = "Climb and Jump tower"
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/create-stree/STREE-HUB/refs/heads/main/Climb%20and%20Jump%20Tower/Main.lua"))()
+elseif placeId == 16732694052 then
+    gameName = "Fisch"
+    loadstring(game:HttpGet("https://pandadevelopment.net/virtual/file/18468d6a99cee147"))()
     success = true
 elseif placeId == 109983668079237 then
     gameName = "Steal A Brainrot"
