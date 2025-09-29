@@ -1,4 +1,3 @@
-
 local placeId = game.PlaceId
 local StarterGui = game:GetService("StarterGui")
 local gameName, success = nil, false
@@ -9,7 +8,7 @@ if placeId == 121864768012064 then
     success = true
 elseif placeId == 127742093697776 then
     gameName = "Plant Vs Brainrots"
-    loadstring(game:HttpGet("https://pandadevelopment.net/virtual/file/b3b9788fb28d2574"))()
+    loadstring(game:HttpGet("https://pandadevelopment.net/virtual/file/7a5d3ecc207b5a1b"))()
     success = true
 elseif placeId == 18687417158 then
     gameName = "Forsaken"
