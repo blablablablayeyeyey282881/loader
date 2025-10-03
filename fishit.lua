@@ -8,7 +8,7 @@ if placeId == 121864768012064 then
     success = true
 elseif placeId == 127742093697776 then
     gameName = "Plant Vs Brainrots"
-    loadstring(game:HttpGet("https://pandadevelopment.net/virtual/file/8da29ab7864a448e"))()
+    loadstring(game:HttpGet("https://pandadevelopment.net/virtual/file/de960ad8455195ae"))()
     success = true
 elseif placeId == 18687417158 then
     gameName = "Forsaken"
