@@ -46,14 +46,14 @@ end
 
 if success and gameName then
     StarterGui:SetCore("SendNotification", {
-        Title = "NEXA HUB Loaded!",
+        Title = "VYNHUB Loaded!",
         Text = gameName .. " script loader!",
         Duration = 6,
         Icon = "rbxassetid://6023426926"
     })
 else
     StarterGui:SetCore("SendNotification", {
-        Title = "NEXA HUB",
+        Title = "VYNHUB",
         Text = (gameName or "Game") .. " Not Found!",
         Duration = 6,
         Icon = "rbxassetid://6023426923"
