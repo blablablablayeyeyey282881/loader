@@ -4,7 +4,7 @@ local gameName, success = nil, false
 
 if placeId == 121864768012064 then
     gameName = "Fish It"
-    loadstring(game:HttpGet("https://api.junkie-development.de/api/v1/luascripts/public/5ffcaf434ae49518fb22bf0b97b3c3a30d21230dfaf9b4f4bd1bb2c4e7089163/download"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/blablablablayeyeyey282881/loader/main/fishittt.lua"))()
     success = true
 elseif placeId == 127742093697776 then
     gameName = "Plant Vs Brainrots"
